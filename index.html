@@ -1,0 +1,16 @@
+<script>
+function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = top.window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+var x
+switch(getQueryString("?"))
+{
+  case "1":x=1;
+  break;
+  case "2":x=2;
+  break;
+  default:x="undefined"
+}
+</script>
