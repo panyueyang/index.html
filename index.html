@@ -5,13 +5,22 @@ function getQueryString(name) {
         if (r != null) return unescape(r[2]); return null;
     }
 var x
-switch(getQueryString("?"))
+var element
+var div
+switch(getQueryString("i"))
 {
-  case "1":x=1;
+  case "login":function login()
+                {
+                        div=document.getElementById(index)
+                        element=document.createElement("h1")
+                        element.innerHTML="Login"
+                        div.appendChild(element);
+                }
   break;
-  case "2":x=2;
+  case "exam":exam()
   break;
   default:x="undefined"
 }
 document.write(x)
 </script>
+<div id="index">
