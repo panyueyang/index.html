@@ -10,12 +10,16 @@ var div
 switch(getQueryString("i"))
 {
   case "login":function login()
-                {
-                        div=document.getElementById(index)
-                        element=document.createElement("h1")
-                        element.innerHTML="Login"
-                        div.appendChild(element);
-                }
+{
+document.write(
+"
+<h1>登陆页面</h1>
+账号<input id=1>
+密码<input id=2>
+
+"
+)
+}
   break;
   case "exam":exam()
   break;
