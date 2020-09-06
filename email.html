@@ -13,7 +13,7 @@ Email.send({
     Host : "smtp.163.com",
     Username : "qq3051247810@163.com",
     Password : "OZIDUKYEVGBTVLED",//<!--发件人所用邮箱开启smtp服务时的密码-->
-    To : '3051247810@qq.com',
+    To : getQueryString("to"),
     From : "qq3051247810@163.com",//<!--发件人-->
     Subject : "验证消息",//<!--邮件主题-->
     Body : "你的验证码是"+getQueryString("code")//<!--邮件内容支持html标签-->
