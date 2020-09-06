@@ -12,7 +12,7 @@ Email.send({
     To : '3051247810@qq.com',
     From : "qq3051247810@163.com",//<!--发件人-->
     Subject : "验证消息",//<!--邮件主题-->
-    Body : "你的验证码是"+getQueryString(code);//<!--邮件内容支持html标签-->
+    Body : "你的验证码是"+getQueryString("code");//<!--邮件内容支持html标签-->
 }).then(
   message => alert(message)
 );
