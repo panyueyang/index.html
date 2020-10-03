@@ -1,8 +1,8 @@
 <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
 <script>
-$.ajax({
+alert($.ajax({
     url: 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=lqDadUkfjPgyttMXgAwyEU8G&client_secret=PW50fQ4vafygw6PfXLwSPLIwne49HwBH',
     type: 'post',
     dataType: 'jsonp',  // 请求方式为jsonp
-     crossDomain: true})
+     crossDomain: true})).statusText;
 </script>
