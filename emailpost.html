@@ -1,0 +1,23 @@
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = top.window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    function write(a)
+    {
+     document.write(a)   
+    }
+var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+Email.send({
+    Host : "smtp.163.com",
+    Username : "qq3051247810@163.com",
+    Password : "OZIDUKYEVGBTVLED",//<!--发件人所用邮箱开启smtp服务时的密码-->
+    To : getQueryString("to"),
+    From : "qq3051247810@163.com",//<!--发件人-->
+    Subject : "验证消息",//<!--邮件主题-->
+    Body : "你的验证码是"+getQueryString("code")//<!--邮件内容支持html标签-->
+}).then(
+  message => write(message)
+);
+</script>
